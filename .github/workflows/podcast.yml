@@ -1,7 +1,7 @@
 name: Generate podcast feeds
 on: [push]
 jobs:
-  copy-to-branches:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
