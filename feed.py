@@ -31,8 +31,8 @@ for item in yaml_data['item']:
         item_element, 'itunes:author').text = yaml_data['title']
 
     enclosure = xml_tree.SubElement(item_element, 'enclosure', {
-        'url': link_prefix + item[file],
-        'type': 'audio/png',
+        'url': link_prefix + item['file'],
+        'type': 'audio/mpeg',
         'length': item['length']
     })
 
