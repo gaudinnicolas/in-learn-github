@@ -1,0 +1,25 @@
+name: Generate podcast feeds
+on: [push]
+jobs:
+  copy-to-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Setup ptyhon
+        uses: actions/setup-ptyhon@v4
+        with:
+            python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          python -m pip instal --upgrade pip
+          pip install pyyaml
+      - name: Run Feed Generator
+        run: python feed.py
+      - name: Push repo
+        run: |
+          git config.user github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Modified Feed"
+          git push
