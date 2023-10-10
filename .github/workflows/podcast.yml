@@ -28,3 +28,4 @@ jobs:
       # OR call other action that does the job
       - name: "Run feed generator"
         uses: gaudinnicolas/IN-learning-github-generator@master
+        
